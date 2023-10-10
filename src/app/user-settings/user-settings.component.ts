@@ -6,6 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./user-settings.component.css']
 })
 export class UserSettingsComponent {
-  detailView: { name: string | null, age: number | null } = { name: "No seteado", age: 0 };
-  cadenaDeTexto: string = "Cadena de texto"
+  detailView: { name: string, age: number } = { name: "No seteado", age: 0 };
 }

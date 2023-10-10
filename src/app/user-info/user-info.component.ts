@@ -1,24 +1,25 @@
-import { Component, DoCheck, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-user-info',
   templateUrl: './user-info.component.html',
   styleUrls: ['./user-info.component.css']
 })
-export class UserInfoComponent implements DoCheck, OnChanges {
-  @Input() cadenaDeTexto: string = "Cadena de texto";
-  @Input() userInfo: { name: string | null, age: number | null } = { name: "No seteado", age: 0 }; 
-  private oldUserInfo: { name: string | null, age: number | null } = { name: "No seteado", age: 0 }; 
-
-  ngDoCheck(): void {
-    if(this.userInfo.name != this.oldUserInfo.name || this.userInfo.age != this.oldUserInfo.age) this.funcionDeCambios();
-  }
+export class UserInfoComponent implements OnChanges {
+  @Input() userInfo!: { name: string, age: number }; 
+  @Output() userInfoChange = new EventEmitter< { name: string, age: number }>(); 
 
   ngOnChanges(changes: SimpleChanges): void {
-    if(changes["cadenaDeTexto"]) this.funcionDeCambios();
+    if(changes["userInfo"]) this.funcionDeCambios();
   }
 
   funcionDeCambios() {
     console.log("Se detectó un cambio en el componente padre.");
   }
+
+  modificarEdad(delta: number) {
+    this.userInfo.age = this.userInfo.age + delta;
+    this.userInfoChange.emit(this.userInfo);
+  }
+
 }

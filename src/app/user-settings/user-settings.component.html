@@ -3,6 +3,4 @@
 <input type="text" id="name-input" [(ngModel)]="detailView.name">
 <label for="age-input">Edad: </label>
 <input type="number" min="0" step="1" id="age-input" [(ngModel)]="detailView.age"> 
-<label for="string-input">Cadena de texto: </label>
-<input type="text" id="string-input" [(ngModel)]="cadenaDeTexto"> 
-<app-user-info [userInfo]="detailView" [cadenaDeTexto]="cadenaDeTexto"></app-user-info>
+<app-user-info [(userInfo)]="detailView"></app-user-info>
