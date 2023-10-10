@@ -1,1 +1,7 @@
-<p>user-list works!</p>
+<h2 *ngIf="usersList.length > 0">LISTA DE USUARIOS</h2>
+<ul *ngIf="usersList.length > 0">
+    <li *ngFor="let user of usersList">
+        <p>Nombre: {{user.name}}</p>
+        <p>Edad: {{user.age}}</p>
+    </li>
+</ul>

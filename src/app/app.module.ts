@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { UserSettingsComponent } from './user-settings/user-settings.component';
 import { UserInfoComponent } from './user-info/user-info.component';
 import { UserListComponent } from './user-list/user-list.component';
+
+import { UsersService } from './services/users.service';
 
 @NgModule({
   declarations: [
@@ -16,9 +19,10 @@ import { UserListComponent } from './user-list/user-list.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [UsersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
