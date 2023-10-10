@@ -1,6 +1,9 @@
 <h1>AJUSTES DE USUARIO</h1>
+
 <label for="name-input">Nombre: </label>
 <input type="text" id="name-input" [(ngModel)]="detailView.name">
 <label for="age-input">Edad: </label>
 <input type="number" min="0" step="1" id="age-input" [(ngModel)]="detailView.age"> 
-<app-user-info [(userInfo)]="detailView"></app-user-info>
+
+<!--Binding de la propiedad userInfo del componente hijo con la propiedad detailView del componente padre-->
+<app-user-info [userInfo]="detailView" (userInfoChange)="logNuevaEdad($event)"></app-user-info>

@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class UserSettingsComponent {
   detailView: { name: string, age: number } = { name: "No seteado", age: 0 };
+
+  logNuevaEdad(event: { name: string, age: number }) {
+    console.log(`Nueva edad ${event.age}`)
+  }
 }

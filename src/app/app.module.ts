@@ -9,6 +9,7 @@ import { UserInfoComponent } from './user-info/user-info.component';
 import { UserListComponent } from './user-list/user-list.component';
 
 import { UsersService } from './services/users.service';
+import { ApiService } from './services/api.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { UsersService } from './services/users.service';
     FormsModule,
     HttpClientModule
   ],
-  providers: [UsersService],
+  providers: [UsersService, ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

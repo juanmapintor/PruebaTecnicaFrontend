@@ -7,6 +7,8 @@ import { Component, Input, Output, EventEmitter, OnChanges, SimpleChanges } from
 })
 export class UserInfoComponent implements OnChanges {
   @Input() userInfo!: { name: string, age: number }; 
+
+  //Emisor de cambios
   @Output() userInfoChange = new EventEmitter< { name: string, age: number }>(); 
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -17,6 +19,7 @@ export class UserInfoComponent implements OnChanges {
     console.log("Se detectó un cambio en el componente padre.");
   }
 
+  //Método que modifica la edad y emite el cambio
   modificarEdad(delta: number) {
     this.userInfo.age = this.userInfo.age + delta;
     this.userInfoChange.emit(this.userInfo);

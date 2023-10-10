@@ -1,7 +1,9 @@
-<h2 *ngIf="usersList.length > 0">LISTA DE USUARIOS</h2>
+<!-- user-list.component.html -->
+<h2>LISTA DE USUARIOS</h2>
+<p *ngIf="usersList.length == 0">No hay usuarios para mostrar</p>
 <ul *ngIf="usersList.length > 0">
     <li *ngFor="let user of usersList">
         <p>Nombre: {{user.name}}</p>
-        <p>Edad: {{user.age}}</p>
+        <p>{{ user.age >= 18 ? "Mayor de edad" : "Menor de edad"}}</p>
     </li>
 </ul>
