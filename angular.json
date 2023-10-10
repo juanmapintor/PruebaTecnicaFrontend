@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "PruebaTecnicaFrontend2": {
+    "PruebaTecnicaFrontend": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "PruebaTecnicaFrontend2:build:production"
+              "browserTarget": "PruebaTecnicaFrontend:build:production"
             },
             "development": {
-              "browserTarget": "PruebaTecnicaFrontend2:build:development"
+              "browserTarget": "PruebaTecnicaFrontend:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "PruebaTecnicaFrontend2:build"
+            "browserTarget": "PruebaTecnicaFrontend:build"
           }
         },
         "test": {
